@@ -168,6 +168,7 @@ def get_content_with_selenium(url):
 
     # Get element from page
     el = get_element(driver, "/html/body")
+    print(el)
     c = el.get_attribute('innerHTML')
 
     if any(kw in el.text for kw in ROBOT_KW):
