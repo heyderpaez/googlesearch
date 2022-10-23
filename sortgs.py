@@ -37,7 +37,7 @@ PLOT_RESULTS = False
 STARTYEAR = None
 now = datetime.datetime.now()
 ENDYEAR = now.year # Current year
-DEBUG=False # debug mode
+DEBUG=True # debug mode
 MAX_CSV_FNAME = 255
 
 
