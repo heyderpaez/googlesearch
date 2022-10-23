@@ -214,7 +214,7 @@ def main():
     for n in range(0, number_of_results, 10):
         #if start_year is None:
         url = GSCHOLAR_MAIN_URL.format(str(n), keyword.replace(' ','+'))
-            print("Opening URL:", url)
+        print("Opening URL:", url)
         #else:
         #    url=GSCHOLAR_URL_YEAR.format(str(n), keyword.replace(' ','+'), start_year=start_year, end_year=end_year)
 
