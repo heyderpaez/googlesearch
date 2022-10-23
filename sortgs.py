@@ -222,15 +222,15 @@ def main():
         page = session.get(url)#, headers=headers)
         c = page.content
         
-        print(c.decode('ISO-8859-1')
+        print(c.decode('ISO-8859-1'))
         
-        if any(kw in c.decode('ISO-8859-1') for kw in ROBOT_KW):
-            print("Robot checking detected, handling with selenium (if installed)")
-            try:
-                c = get_content_with_selenium(url)
-            except Exception as e:
-                print("No success. The following error was raised:")
-                print(e)
+        #if any(kw in c.decode('ISO-8859-1') for kw in ROBOT_KW):
+        #    print("Robot checking detected, handling with selenium (if installed)")
+        #    try:
+        #        c = get_content_with_selenium(url)
+        #    except Exception as e:
+        #        print("No success. The following error was raised:")
+        #        print(e)
 
         # Create parser
         soup = BeautifulSoup(c, 'html.parser', from_encoding='utf-8')
