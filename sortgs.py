@@ -151,7 +151,7 @@ def get_author(content):
 def get_element(driver, xpath, attempts=5, _count=0):
     '''Safe get_element method with multiple attempts'''
     try:
-        element = driver.find_element_by_xpath(xpath)
+        element = driver.find_element("xpath",xpath)
         return element
     except Exception as e:
         if _count<attempts:
