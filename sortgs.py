@@ -198,7 +198,7 @@ def main():
 
     # Start new session
     session = requests.Session()
-    #headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
     # Variables
     links = []
@@ -219,7 +219,7 @@ def main():
         #    url=GSCHOLAR_URL_YEAR.format(str(n), keyword.replace(' ','+'), start_year=start_year, end_year=end_year)
 
         print("Loading next {} results".format(n+10))
-        page = session.get(url)#, headers=headers)
+        page = session.get(url, headers=headers)
         c = page.content
         
         print(c.decode('ISO-8859-1'))
