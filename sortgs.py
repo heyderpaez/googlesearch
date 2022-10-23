@@ -214,7 +214,6 @@ def main():
     for n in range(0, number_of_results, 10):
         #if start_year is None:
         url = GSCHOLAR_MAIN_URL.format(str(n), keyword.replace(' ','+'))
-        if debug:
             print("Opening URL:", url)
         #else:
         #    url=GSCHOLAR_URL_YEAR.format(str(n), keyword.replace(' ','+'), start_year=start_year, end_year=end_year)
@@ -222,13 +221,16 @@ def main():
         print("Loading next {} results".format(n+10))
         page = session.get(url)#, headers=headers)
         c = page.content
-        if any(kw in c.decode('ISO-8859-1') for kw in ROBOT_KW):
-            print("Robot checking detected, handling with selenium (if installed)")
-            try:
-                c = get_content_with_selenium(url)
-            except Exception as e:
-                print("No success. The following error was raised:")
-                print(e)
+        
+        print(c.decode('ISO-8859-1')
+        
+        #if any(kw in c.decode('ISO-8859-1') for kw in ROBOT_KW):
+        #    print("Robot checking detected, handling with selenium (if installed)")
+        #    try:
+        #        c = get_content_with_selenium(url)
+        #    except Exception as e:
+        #        print("No success. The following error was raised:")
+        #        print(e)
 
         # Create parser
         soup = BeautifulSoup(c, 'html.parser', from_encoding='utf-8')
