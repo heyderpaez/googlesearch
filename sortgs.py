@@ -194,7 +194,7 @@ def main():
         GSCHOLAR_MAIN_URL = GSCHOLAR_MAIN_URL + ENDYEAR_URL.format(end_year)
 
     if debug:
-        GSCHOLAR_MAIN_URL='https://web.archive.org/web/20210314203256/'+GSCHOLAR_URL
+        GSCHOLAR_MAIN_URL=GSCHOLAR_URL
 
     # Start new session
     session = requests.Session()
