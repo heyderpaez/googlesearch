@@ -135,7 +135,7 @@ def setup_driver():
     print('Loading...')
     chrome_options = Options()
     chrome_options.add_argument("disable-infobars")
-    driver = webdriver.Chrome(chrome_options=chrome_options)
+    driver = webdriver.Chrome(options=chrome_options)
     return driver
 
 def get_author(content):
